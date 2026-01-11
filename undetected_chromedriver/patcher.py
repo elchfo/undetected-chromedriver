@@ -283,7 +283,7 @@ class Patcher(object):
         else:
             zip_name = zip_name.replace("_", "-", 1)
             download_url = "https://storage.googleapis.com/chrome-for-testing-public/%s/%s/%s"
-            download_url %= (self.version_full.vstring, self.platform_name, zip_name)
+            download_url %= (str(self.version_full), self.platform_name, zip_name)
 
         logger.debug("downloading from %s" % download_url)
         return urlretrieve(download_url)[0]
